@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+">
+
+<context:annotation-config/>
+
+	<!-- 빈객체 생성 및 조립 (주입) -->
+	<context:component-scan base-package="controllers" />
+
+	<!-- Tiles START -->
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/Tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="urlBasedViewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles2.TilesView" />
+	</bean>
+
+	<!-- Tiles END -->
+
+	<!-- ajax -->
+
+	<bean id="jsonView" class="net.sf.json.spring.web.servlet.view.JsonView" />
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="1"></property>
+	</bean>
+	
+	<!-- email -->
+	
+	<!-- <bean id="email" class="spring.email.Email">
+    </bean>
+    <bean id="emailSender" class="spring.email.EmailSender">
+    </bean> -->
+	<bean id="UploadService" class="service.UploadService"></bean>
+</beans>
