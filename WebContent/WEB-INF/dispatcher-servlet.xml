@@ -11,7 +11,7 @@ http://www.springframework.org/schema/context/spring-context.xsd
 <context:annotation-config/>
 
 	<!-- 빈객체 생성 및 조립 (주입) -->
-	<context:component-scan base-package="controllers" />
+	<context:component-scan base-package="controller" />
 
 	<!-- Tiles START -->
 	<bean id="tilesConfigurer"
@@ -43,5 +43,5 @@ http://www.springframework.org/schema/context/spring-context.xsd
     </bean>
     <bean id="emailSender" class="spring.email.EmailSender">
     </bean> -->
-	<bean id="UploadService" class="service.UploadService"></bean>
+	<!-- <bean id="UploadService" class="service.UploadService"></bean> -->
 </beans>

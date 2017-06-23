@@ -21,7 +21,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
 	      	<property name="order" value="0"/>
 	</bean>
-	<bean id="download" class="common.DownloadView"/>
+	<!-- <bean id="download" class="common.DownloadView"/> -->
 	
 		<!-- 트랜잭션 추가 _ 12월 7일  -->
 	<bean id="transactionManager"
@@ -33,7 +33,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
 	
 	
 	<!--excelview 빈등록 12월 12일 -->
-	<bean name="excelView" class="common.ExcelView"/>
+	<!-- <bean name="excelView" class="common.ExcelView"/> -->
 	
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
